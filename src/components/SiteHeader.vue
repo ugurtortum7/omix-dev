@@ -4,7 +4,7 @@
     <div class="header-inner">
       <div class="left">
         <div class="logo">
-          <img v-if="!showText" src="/logo.svg" alt="OMIX logo" class="logo-img" @error="showText = true" />
+          <img v-if="!showText" src="/logo_black.png" alt="OMIX logo" class="logo-img" @error="showText = true" />
         </div>
       </div>
 
