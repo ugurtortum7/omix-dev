@@ -4,7 +4,13 @@
     <div class="header-inner">
       <div class="left">
         <div class="logo">
-          <img v-if="!showText" src="/logo_black.png" alt="OMIX logo" class="logo-img" @error="showText = true" />
+          <img
+            v-if="!showText"
+            src="/logo_black.png"
+            alt="OMIX logo"
+            class="logo-img"
+            @error="showText = true"
+          />
         </div>
       </div>
 
@@ -170,13 +176,19 @@ const showText = ref(false)
 .site-header {
   background: white;
   border-bottom: 1px solid #e6e6e6;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial;
 }
-.top-line{
+.top-line {
   height: 6px;
   background: #fff;
 }
-.header-inner{
+.header-inner {
   max-width: 1100px;
   margin: 0 auto;
   display: flex;
@@ -184,20 +196,20 @@ const showText = ref(false)
   justify-content: space-between;
   padding: 12px 16px;
 }
-.logo{
+.logo {
   font-weight: 700;
   letter-spacing: 2px;
   font-size: 22px;
 }
-.main-nav{
+.main-nav {
   display: flex;
   gap: 32px;
   align-items: center;
 }
-.nav-item{
+.nav-item {
   position: relative;
 }
-.main-nav a{
+.main-nav a {
   color: #333;
   text-decoration: none;
   font-size: 16px;
@@ -205,7 +217,7 @@ const showText = ref(false)
   padding-bottom: 4px;
   display: inline-block;
 }
-.main-nav a::after{
+.main-nav a::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -215,20 +227,20 @@ const showText = ref(false)
   background: #000;
   transition: width 0.3s ease;
 }
-.main-nav a:hover{ 
+.main-nav a:hover {
   color: #000;
 }
-.main-nav a:hover::after{
+.main-nav a:hover::after {
   width: 100%;
 }
-.dropdown-menu{
+.dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
   background: white;
   border: 1px solid #e6e6e6;
   border-radius: 4px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   min-width: 200px;
   padding: 8px 0;
   opacity: 0;
@@ -238,7 +250,7 @@ const showText = ref(false)
   z-index: 100;
   margin-top: 16px;
 }
-.dropdown-mobil{
+.dropdown-mobil {
   display: flex;
   gap: 12px;
   padding: 16px 16px 16px 200px;
@@ -250,29 +262,29 @@ const showText = ref(false)
   transform: translateY(-10px);
   justify-content: center;
 }
-.nav-item.has-dropdown:hover .dropdown-menu{
+.nav-item.has-dropdown:hover .dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
-.nav-item.has-dropdown:hover .dropdown-mobil{
+.nav-item.has-dropdown:hover .dropdown-mobil {
   transform: translateY(0);
 }
-.dropdown-item{
+.dropdown-item {
   display: block;
   padding: 10px 20px;
   color: #333;
   font-size: 14px;
   transition: background 0.2s ease;
 }
-.dropdown-item:hover{
+.dropdown-item:hover {
   background: #f5f5f5;
   color: #000;
 }
-.dropdown-item::after{
+.dropdown-item::after {
   display: none;
 }
-.product-item{
+.product-item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -282,24 +294,24 @@ const showText = ref(false)
   transition: background 0.2s ease;
   border-radius: 4px;
 }
-.product-item:hover{
+.product-item:hover {
   background: #f5f5f5;
 }
-.product-image{
+.product-image {
   width: 40px;
   height: 55px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.phone-placeholder{
+.phone-placeholder {
   width: 20px;
   height: 50px;
   border: 1px solid #333;
   border-radius: 6px;
   background: white;
 }
-.device-placeholder{
+.device-placeholder {
   width: 50px;
   height: 45px;
   border: 1px solid #333;
@@ -308,7 +320,7 @@ const showText = ref(false)
   position: relative;
 }
 .device-placeholder::before,
-.device-placeholder::after{
+.device-placeholder::after {
   content: '';
   position: absolute;
   width: 15px;
@@ -319,13 +331,13 @@ const showText = ref(false)
   top: 50%;
   transform: translateY(-50%);
 }
-.device-placeholder::before{
+.device-placeholder::before {
   left: 5px;
 }
-.device-placeholder::after{
+.device-placeholder::after {
   right: 5px;
 }
-.iot-placeholder{
+.iot-placeholder {
   width: 45px;
   height: 45px;
   border: 1px solid #333;
@@ -333,7 +345,7 @@ const showText = ref(false)
   background: white;
   position: relative;
 }
-.iot-placeholder::before{
+.iot-placeholder::before {
   content: '';
   position: absolute;
   width: 12px;
@@ -345,7 +357,7 @@ const showText = ref(false)
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.iot-placeholder::after{
+.iot-placeholder::after {
   content: '';
   position: absolute;
   width: 20px;
@@ -357,21 +369,28 @@ const showText = ref(false)
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.product-name{
+.product-name {
   font-size: 11px;
   color: #333;
   text-align: center;
   white-space: nowrap;
 }
-.right{
+.right {
   display: flex;
   align-items: center;
   gap: 16px;
 }
-.icons .icon{ margin-right: 8px }
-.lang{ font-size: 13px; color: #666 }
+.icons .icon {
+  margin-right: 8px;
+}
+.lang {
+  font-size: 13px;
+  color: #666;
+}
 
-@media (max-width: 720px){
-  .main-nav{ display:none }
+@media (max-width: 720px) {
+  .main-nav {
+    display: none;
+  }
 }
 </style>

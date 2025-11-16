@@ -2,28 +2,16 @@
   <div class="sign-in-container">
     <div class="sign-in-box">
       <h1 class="title">Giriş Yap</h1>
-      
+
       <form @submit.prevent="handleSubmit" class="sign-in-form">
         <div class="form-group">
           <label for="email">E-Posta</label>
-          <input
-            type="email"
-            id="email"
-            v-model="email"
-            class="form-input"
-            required
-          />
+          <input type="email" id="email" v-model="email" class="form-input" required />
         </div>
 
         <div class="form-group">
           <label for="password">Şifre</label>
-          <input
-            type="password"
-            id="password"
-            v-model="password"
-            class="form-input"
-            required
-          />
+          <input type="password" id="password" v-model="password" class="form-input" required />
         </div>
 
         <div class="form-group">
@@ -40,14 +28,12 @@
         </div>
 
         <div class="form-group">
-          <label for = "captcha"> Şifremi Unuttum ?</label>
+          <label for="captcha"> Şifremi Unuttum ?</label>
         </div>
 
         <button type="submit" class="submit-btn">Giriş Yap</button>
 
-        <p class="register-link">
-          Hesabınız yok mu? <a href="/register">Kayıt Ol</a>
-        </p>
+        <p class="register-link">Hesabınız yok mu? <a href="/register">Kayıt Ol</a></p>
       </form>
     </div>
   </div>
@@ -119,7 +105,13 @@ const handleSubmit = () => {
   border-radius: 4px;
   font-size: 14px;
   transition: border-color 0.2s;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial;
 }
 
 .form-input:focus {
@@ -167,7 +159,7 @@ const handleSubmit = () => {
   color: #666;
 }
 
-.checkbox-label input[type="checkbox"] {
+.checkbox-label input[type='checkbox'] {
   cursor: pointer;
   width: 16px;
   height: 16px;
@@ -211,7 +203,7 @@ const handleSubmit = () => {
   .sign-in-box {
     padding: 40px 30px;
   }
-  
+
   .captcha-group {
     flex-direction: column;
     align-items: stretch;

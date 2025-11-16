@@ -1,15 +1,17 @@
 <template>
   <div class="basket-container">
     <h1 class="basket-title">Sepetim</h1>
-    
+
     <div class="basket-content">
       <div v-if="cartItems.length === 0" class="empty-cart">
         <p>Sepetinizde toplam ({{ cartItems.length }}) adet ürün bulunmaktadır.</p>
       </div>
 
       <div v-else>
-        <p class="cart-info">Sepetinizde toplam ({{ cartItems.length }}) adet ürün bulunmaktadır.</p>
-        
+        <p class="cart-info">
+          Sepetinizde toplam ({{ cartItems.length }}) adet ürün bulunmaktadır.
+        </p>
+
         <table class="cart-table">
           <thead>
             <tr>
@@ -28,10 +30,10 @@
               </td>
               <td class="price">{{ formatPrice(item.price) }}</td>
               <td class="quantity">
-                <input 
-                  type="number" 
-                  v-model.number="item.quantity" 
-                  min="1" 
+                <input
+                  type="number"
+                  v-model.number="item.quantity"
+                  min="1"
                   class="quantity-input"
                   @change="updateQuantity(item)"
                 />
@@ -39,8 +41,17 @@
               <td class="total">{{ formatPrice(item.price * item.quantity) }}</td>
               <td class="actions">
                 <button @click="removeItem(item.id)" class="remove-btn">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"
+                    />
                   </svg>
                 </button>
               </td>
@@ -49,17 +60,17 @@
         </table>
 
         <div class="discount-section">
-          <input 
-            type="text" 
-            v-model="discountCode" 
-            placeholder="İndirim Kodu" 
+          <input
+            type="text"
+            v-model="discountCode"
+            placeholder="İndirim Kodu"
             class="discount-input"
           />
         </div>
 
         <div class="summary-section">
           <button @click="applyDiscount" class="apply-btn">Uygula</button>
-          
+
           <div class="summary-details">
             <div class="summary-row">
               <span class="label">Sepet Toplamı:</span>
@@ -67,7 +78,9 @@
             </div>
             <div class="summary-row">
               <span class="label">Kargo Ücreti:</span>
-              <span class="value">{{ shippingFee > 0 ? formatPrice(shippingFee) : 'Ücretsiz' }}</span>
+              <span class="value">{{
+                shippingFee > 0 ? formatPrice(shippingFee) : 'Ücretsiz'
+              }}</span>
             </div>
             <div class="summary-row total-row">
               <span class="label">Toplam:</span>
@@ -89,7 +102,7 @@ const cartItems = ref([
   {
     id: 1,
     name: 'O1 Neo 5 GB Ram - 128 GB - Siyah',
-    price: 8999.00,
+    price: 8999.0,
     quantity: 1,
     image: '/black-neo.png'
   }
@@ -98,7 +111,7 @@ const cartItems = ref([
 const discountCode = ref('')
 
 const cartTotal = computed(() => {
-  return cartItems.value.reduce((sum, item) => sum + (item.price * item.quantity), 0)
+  return cartItems.value.reduce((sum, item) => sum + item.price * item.quantity, 0)
 })
 
 const shippingFee = computed(() => {
@@ -120,7 +133,7 @@ const updateQuantity = (item) => {
 }
 
 const removeItem = (id) => {
-  const index = cartItems.value.findIndex(item => item.id === id)
+  const index = cartItems.value.findIndex((item) => item.id === id)
   if (index !== -1) {
     cartItems.value.splice(index, 1)
   }

@@ -8,5 +8,4 @@
 import BasketCart from '../components/BasketCart.vue'
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

@@ -59,7 +59,9 @@
           <div class="spec-details">
             <p class="spec-detail">Ana Modüler: 64MP AF + 5MP FF</p>
             <p class="spec-detail">Ön Kamera: 8MP FF</p>
-            <p class="spec-detail">Kamera Özellikleri: Led Flaş, Gece Fotoğraf Modu, Gece Video Modu</p>
+            <p class="spec-detail">
+              Kamera Özellikleri: Led Flaş, Gece Fotoğraf Modu, Gece Video Modu
+            </p>
           </div>
         </div>
 
@@ -104,8 +106,7 @@
   </div>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style scoped>
 .tech-features-container {
@@ -198,24 +199,24 @@
   .tech-features-container {
     padding: 40px 20px;
   }
-  
+
   .product-image img {
     max-width: 250px;
   }
-  
+
   .product-title {
     font-size: 20px;
   }
-  
+
   .spec-section {
     grid-template-columns: 1fr;
     gap: 15px;
   }
-  
+
   .spec-title {
     font-size: 28px;
   }
-  
+
   .spec-detail {
     font-size: 14px;
   }

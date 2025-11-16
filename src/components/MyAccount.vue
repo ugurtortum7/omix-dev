@@ -1,7 +1,7 @@
 <template>
   <div class="account-container">
     <h1 class="account-title">{{ currentTabLabel }}</h1>
-    
+
     <div class="account-content">
       <!-- Sidebar Navigation -->
       <div class="account-sidebar">
@@ -81,7 +81,12 @@
 
             <div class="captcha-section">
               <div class="captcha-code">E4EMZ</div>
-              <input type="text" v-model="formData.captcha" placeholder="Güvenlik Kodu" class="form-input captcha-input" />
+              <input
+                type="text"
+                v-model="formData.captcha"
+                placeholder="Güvenlik Kodu"
+                class="form-input captcha-input"
+              />
             </div>
 
             <button type="submit" class="save-btn">Kaydet</button>
@@ -90,8 +95,10 @@
 
         <!-- Teslimat Adreslerim Tab -->
         <div v-if="activeTab === 'delivery'" class="form-section">
-          <button class="add-new-btn" @click="showDeliveryModal = !showDeliveryModal">Yeni Adres Ekle</button>
-          
+          <button class="add-new-btn" @click="showDeliveryModal = !showDeliveryModal">
+            Yeni Adres Ekle
+          </button>
+
           <table class="address-table">
             <thead>
               <tr>
@@ -133,7 +140,11 @@
               <div class="form-row">
                 <div class="form-group">
                   <label>Ülke</label>
-                  <select v-model="newAddress.country" @change="handleCountryChange" class="form-input">
+                  <select
+                    v-model="newAddress.country"
+                    @change="handleCountryChange"
+                    class="form-input"
+                  >
                     <option value="">- Seçim Yapınız -</option>
                     <option v-for="country in countries" :key="country.id" :value="country.name">
                       {{ country.name }}
@@ -142,7 +153,12 @@
                 </div>
                 <div class="form-group">
                   <label>İl</label>
-                  <select v-model="newAddress.city" @change="handleCityChange" class="form-input" :disabled="!newAddress.country">
+                  <select
+                    v-model="newAddress.city"
+                    @change="handleCityChange"
+                    class="form-input"
+                    :disabled="!newAddress.country"
+                  >
                     <option value="">İl seçiniz</option>
                     <option v-for="city in availableCities" :key="city.id" :value="city.name">
                       {{ city.name }}
@@ -151,9 +167,17 @@
                 </div>
                 <div class="form-group">
                   <label>İlçe</label>
-                  <select v-model="newAddress.district" class="form-input" :disabled="!newAddress.city">
+                  <select
+                    v-model="newAddress.district"
+                    class="form-input"
+                    :disabled="!newAddress.city"
+                  >
                     <option value="">İlçe seçiniz</option>
-                    <option v-for="district in availableDistricts" :key="district.id" :value="district.name">
+                    <option
+                      v-for="district in availableDistricts"
+                      :key="district.id"
+                      :value="district.name"
+                    >
                       {{ district.name }}
                     </option>
                   </select>
@@ -162,12 +186,21 @@
 
               <div class="form-group">
                 <label>Adres</label>
-                <textarea v-model="newAddress.address" class="form-input address-textarea" rows="4"></textarea>
+                <textarea
+                  v-model="newAddress.address"
+                  class="form-input address-textarea"
+                  rows="4"
+                ></textarea>
               </div>
 
               <div class="captcha-section">
                 <div class="captcha-code">VKNL4</div>
-                <input type="text" v-model="newAddress.captcha" placeholder="Güvenlik Kodu" class="form-input captcha-input" />
+                <input
+                  type="text"
+                  v-model="newAddress.captcha"
+                  placeholder="Güvenlik Kodu"
+                  class="form-input captcha-input"
+                />
               </div>
 
               <button type="submit" class="save-btn">Kaydet</button>
@@ -177,8 +210,10 @@
 
         <!-- Fatura Adreslerim Tab -->
         <div v-if="activeTab === 'billing'" class="form-section">
-          <button class="add-new-btn" @click="showBillingModal = !showBillingModal">Yeni Adres Ekle</button>
-          
+          <button class="add-new-btn" @click="showBillingModal = !showBillingModal">
+            Yeni Adres Ekle
+          </button>
+
           <table class="address-table">
             <thead>
               <tr>
@@ -220,7 +255,11 @@
               <div class="form-row">
                 <div class="form-group">
                   <label>Ülke</label>
-                  <select v-model="newAddress.country" @change="handleCountryChange" class="form-input">
+                  <select
+                    v-model="newAddress.country"
+                    @change="handleCountryChange"
+                    class="form-input"
+                  >
                     <option value="">- Seçim Yapınız -</option>
                     <option v-for="country in countries" :key="country.id" :value="country.name">
                       {{ country.name }}
@@ -229,7 +268,12 @@
                 </div>
                 <div class="form-group">
                   <label>İl</label>
-                  <select v-model="newAddress.city" @change="handleCityChange" class="form-input" :disabled="!newAddress.country">
+                  <select
+                    v-model="newAddress.city"
+                    @change="handleCityChange"
+                    class="form-input"
+                    :disabled="!newAddress.country"
+                  >
                     <option value="">İl seçiniz</option>
                     <option v-for="city in availableCities" :key="city.id" :value="city.name">
                       {{ city.name }}
@@ -238,9 +282,17 @@
                 </div>
                 <div class="form-group">
                   <label>İlçe</label>
-                  <select v-model="newAddress.district" class="form-input" :disabled="!newAddress.city">
+                  <select
+                    v-model="newAddress.district"
+                    class="form-input"
+                    :disabled="!newAddress.city"
+                  >
                     <option value="">İlçe seçiniz</option>
-                    <option v-for="district in availableDistricts" :key="district.id" :value="district.name">
+                    <option
+                      v-for="district in availableDistricts"
+                      :key="district.id"
+                      :value="district.name"
+                    >
                       {{ district.name }}
                     </option>
                   </select>
@@ -249,12 +301,21 @@
 
               <div class="form-group">
                 <label>Adres</label>
-                <textarea v-model="newAddress.address" class="form-input address-textarea" rows="4"></textarea>
+                <textarea
+                  v-model="newAddress.address"
+                  class="form-input address-textarea"
+                  rows="4"
+                ></textarea>
               </div>
 
               <div class="captcha-section">
                 <div class="captcha-code">VKNL4</div>
-                <input type="text" v-model="newAddress.captcha" placeholder="Güvenlik Kodu" class="form-input captcha-input" />
+                <input
+                  type="text"
+                  v-model="newAddress.captcha"
+                  placeholder="Güvenlik Kodu"
+                  class="form-input captcha-input"
+                />
               </div>
 
               <button type="submit" class="save-btn">Kaydet</button>
@@ -324,7 +385,7 @@ const countries = [
 
 // Mock data for cities by country
 const citiesByCountry = {
-  'Türkiye': [
+  Türkiye: [
     { id: 1, name: 'İstanbul' },
     { id: 2, name: 'Ankara' },
     { id: 3, name: 'İzmir' },
@@ -334,19 +395,19 @@ const citiesByCountry = {
     { id: 7, name: 'Gaziantep' },
     { id: 8, name: 'Konya' }
   ],
-  'Almanya': [
+  Almanya: [
     { id: 1, name: 'Berlin' },
     { id: 2, name: 'München' },
     { id: 3, name: 'Hamburg' },
     { id: 4, name: 'Frankfurt' }
   ],
-  'Fransa': [
+  Fransa: [
     { id: 1, name: 'Paris' },
     { id: 2, name: 'Lyon' },
     { id: 3, name: 'Marsilya' },
     { id: 4, name: 'Nice' }
   ],
-  'İngiltere': [
+  İngiltere: [
     { id: 1, name: 'Londra' },
     { id: 2, name: 'Manchester' },
     { id: 3, name: 'Birmingham' },
@@ -362,7 +423,7 @@ const citiesByCountry = {
 
 // Mock data for districts by city
 const districtsByCity = {
-  'İstanbul': [
+  İstanbul: [
     { id: 1, name: 'Kadıköy' },
     { id: 2, name: 'Beşiktaş' },
     { id: 3, name: 'Şişli' },
@@ -372,43 +433,43 @@ const districtsByCity = {
     { id: 7, name: 'Bakırköy' },
     { id: 8, name: 'Ataşehir' }
   ],
-  'Ankara': [
+  Ankara: [
     { id: 1, name: 'Çankaya' },
     { id: 2, name: 'Keçiören' },
     { id: 3, name: 'Yenimahalle' },
     { id: 4, name: 'Mamak' },
     { id: 5, name: 'Etimesgut' }
   ],
-  'İzmir': [
+  İzmir: [
     { id: 1, name: 'Konak' },
     { id: 2, name: 'Karşıyaka' },
     { id: 3, name: 'Bornova' },
     { id: 4, name: 'Buca' },
     { id: 5, name: 'Çiğli' }
   ],
-  'Antalya': [
+  Antalya: [
     { id: 1, name: 'Muratpaşa' },
     { id: 2, name: 'Kepez' },
     { id: 3, name: 'Konyaaltı' },
     { id: 4, name: 'Alanya' }
   ],
-  'Bursa': [
+  Bursa: [
     { id: 1, name: 'Osmangazi' },
     { id: 2, name: 'Nilüfer' },
     { id: 3, name: 'Yıldırım' },
     { id: 4, name: 'Gemlik' }
   ],
-  'Berlin': [
+  Berlin: [
     { id: 1, name: 'Mitte' },
     { id: 2, name: 'Kreuzberg' },
     { id: 3, name: 'Charlottenburg' }
   ],
-  'Paris': [
+  Paris: [
     { id: 1, name: '1er arrondissement' },
     { id: 2, name: '8e arrondissement' },
     { id: 3, name: '16e arrondissement' }
   ],
-  'Londra': [
+  Londra: [
     { id: 1, name: 'Westminster' },
     { id: 2, name: 'Camden' },
     { id: 3, name: 'Kensington' }
@@ -428,7 +489,7 @@ const availableDistricts = computed(() => {
 
 // Computed property for current tab label
 const currentTabLabel = computed(() => {
-  const currentTab = tabs.find(tab => tab.id === activeTab.value)
+  const currentTab = tabs.find((tab) => tab.id === activeTab.value)
   return currentTab ? currentTab.label : 'Hesabım'
 })
 
@@ -524,7 +585,7 @@ const handleAddAddress = (type) => {
     country: newAddress.value.country,
     city: newAddress.value.city
   }
-  
+
   if (type === 'delivery') {
     deliveryAddresses.value.push(addressData)
     showDeliveryModal.value = false
@@ -532,7 +593,7 @@ const handleAddAddress = (type) => {
     billingAddresses.value.push(addressData)
     showBillingModal.value = false
   }
-  
+
   newAddress.value = {
     name: '',
     postalCode: '',
@@ -666,7 +727,7 @@ const viewOrder = (orderId) => {
   color: #333;
 }
 
-.checkbox-group input[type="checkbox"] {
+.checkbox-group input[type='checkbox'] {
   width: 18px;
   height: 18px;
   cursor: pointer;
@@ -808,29 +869,29 @@ const viewOrder = (orderId) => {
     grid-template-columns: 1fr;
     gap: 30px;
   }
-  
+
   .account-sidebar {
     flex-direction: row;
     overflow-x: auto;
   }
-  
+
   .tab-btn {
     white-space: nowrap;
   }
-  
+
   .form-row {
     grid-template-columns: 1fr;
   }
-  
+
   .captcha-section {
     flex-direction: column;
     align-items: stretch;
   }
-  
+
   .captcha-input {
     max-width: 100%;
   }
-  
+
   .address-table {
     display: block;
     overflow-x: auto;

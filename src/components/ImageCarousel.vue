@@ -3,17 +3,24 @@
     <div class="carousel">
       <!-- Previous Button -->
       <button @click="prevSlide" class="carousel-btn prev-btn" aria-label="Previous">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M15 18l-6-6 6-6"/>
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M15 18l-6-6 6-6" />
         </svg>
       </button>
 
       <!-- Carousel Images -->
       <div class="carousel-slides">
         <transition :name="slideDirection">
-          <img 
+          <img
             :key="currentIndex"
-            :src="images[currentIndex]" 
+            :src="images[currentIndex]"
             :alt="`Slide ${currentIndex + 1}`"
             class="carousel-image"
           />
@@ -22,15 +29,22 @@
 
       <!-- Next Button -->
       <button @click="nextSlide" class="carousel-btn next-btn" aria-label="Next">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M9 18l6-6-6-6"/>
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M9 18l6-6-6-6" />
         </svg>
       </button>
 
       <!-- Dots Indicator -->
       <div class="carousel-dots">
-        <button 
-          v-for="(image, index) in images" 
+        <button
+          v-for="(image, index) in images"
           :key="index"
           @click="goToSlide(index)"
           :class="['dot', { active: currentIndex === index }]"

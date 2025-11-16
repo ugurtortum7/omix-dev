@@ -2,61 +2,31 @@
   <div class="sign-in-container">
     <div class="sign-in-box">
       <h1 class="title">Kayıt Ol</h1>
-      
+
       <form @submit.prevent="handleSubmit" class="sign-in-form">
         <div class="form-group">
           <label for="name">Ad</label>
-          <input
-            type="text"
-            id="name"
-            v-model="name"
-            class="form-input"
-            required
-          />
+          <input type="text" id="name" v-model="name" class="form-input" required />
         </div>
 
         <div class="form-group">
           <label for="surname">Soyad</label>
-          <input
-            type="text"
-            id="surname"
-            v-model="surname"
-            class="form-input"
-            required
-          />
+          <input type="text" id="surname" v-model="surname" class="form-input" required />
         </div>
 
         <div class="form-group">
           <label for="email">E-Posta</label>
-          <input
-            type="email"
-            id="email"
-            v-model="email"
-            class="form-input"
-            required
-          />
+          <input type="email" id="email" v-model="email" class="form-input" required />
         </div>
 
         <div class="form-group">
           <label for="phone">Telefon</label>
-          <input
-            type="tel"
-            id="phone"
-            v-model="phone"
-            class="form-input"
-            required
-          />
+          <input type="tel" id="phone" v-model="phone" class="form-input" required />
         </div>
 
         <div class="form-group">
           <label for="password">Şifre</label>
-          <input
-            type="password"
-            id="password"
-            v-model="password"
-            class="form-input"
-            required
-          />
+          <input type="password" id="password" v-model="password" class="form-input" required />
         </div>
 
         <div class="form-group">
@@ -75,29 +45,35 @@
         <div class="form-group checkbox-group">
           <label class="checkbox-label">
             <input type="checkbox" v-model="agreement1" required />
-            <span>Kişisel Verilerim Korunması Kanunu uyarınca hazırlanmış Aydınlatma Metnini okuduysanız, işlenir işlemleriniz için yürülüğe koyarız.</span>
+            <span
+              >Kişisel Verilerim Korunması Kanunu uyarınca hazırlanmış Aydınlatma Metnini
+              okuduysanız, işlenir işlemleriniz için yürülüğe koyarız.</span
+            >
           </label>
         </div>
 
         <div class="form-group checkbox-group">
           <label class="checkbox-label">
             <input type="checkbox" v-model="agreement2" required />
-            <span>İletisin, kampanya, haberleşme size bildirimde bulunmamız için ve reklam amaçlı izninizin olduğunu onay verilir. Ön koşulu işleyinin.</span>
+            <span
+              >İletisin, kampanya, haberleşme size bildirimde bulunmamız için ve reklam amaçlı
+              izninizin olduğunu onay verilir. Ön koşulu işleyinin.</span
+            >
           </label>
         </div>
 
         <div class="form-group checkbox-group">
           <label class="checkbox-label">
             <input type="checkbox" v-model="agreement3" required />
-            <span>İletisin, aydınlatmayı olduğunuza sefer işleminin için yaraların güvenliğini.</span>
+            <span
+              >İletisin, aydınlatmayı olduğunuza sefer işleminin için yaraların güvenliğini.</span
+            >
           </label>
         </div>
 
         <button type="submit" class="submit-btn">Kayıt Ol</button>
 
-        <p class="register-link">
-          Hesabınız var mı? <a href="/sign-in">Giriş Yap</a>
-        </p>
+        <p class="register-link">Hesabınız var mı? <a href="/sign-in">Giriş Yap</a></p>
       </form>
     </div>
   </div>
@@ -179,7 +155,13 @@ const handleSubmit = () => {
   border-radius: 4px;
   font-size: 14px;
   transition: border-color 0.2s;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial;
 }
 
 .form-input:focus {
@@ -229,7 +211,7 @@ const handleSubmit = () => {
   line-height: 1.4;
 }
 
-.checkbox-label input[type="checkbox"] {
+.checkbox-label input[type='checkbox'] {
   cursor: pointer;
   width: 16px;
   height: 16px;
@@ -277,7 +259,7 @@ const handleSubmit = () => {
   .sign-in-box {
     padding: 40px 30px;
   }
-  
+
   .captcha-group {
     flex-direction: column;
     align-items: stretch;

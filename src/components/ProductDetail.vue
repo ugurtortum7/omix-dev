@@ -4,25 +4,24 @@
       <div class="product-image">
         <img src="/o1-neo.png" alt="O1 Neo" />
       </div>
-      
+
       <div class="product-info">
         <h1 class="product-title">O1 Neo</h1>
-        
+
         <div class="product-description">
           <p>64 MP yüksek çözünürlüklü kamerası,</p>
           <p>Dolby Atmos ses teknolojisi ve</p>
           <p>çarpıcı renkleriyle</p>
           <p>kendi stilini özgürce yansıt.</p>
         </div>
-        
+
         <button class="explore-btn">KEŞFET</button>
       </div>
     </div>
   </div>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style scoped>
 .product-container {
@@ -111,20 +110,20 @@
     flex-direction: column;
     gap: 40px;
   }
-  
+
   .product-info {
     align-items: center;
     text-align: center;
   }
-  
+
   .explore-btn {
     align-self: center;
   }
-  
+
   .product-title {
     font-size: 48px;
   }
-  
+
   .product-description {
     font-size: 16px;
   }
