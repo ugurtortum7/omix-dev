@@ -8,6 +8,7 @@ import TechFeaturesPage from '../views/TechFeaturesPage.vue'
 import PurchasePage from '../views/PurchasePage.vue'
 import MyAccountPage from '../views/MyAccountPage.vue'
 import BasketPage from '../views/BasketPage.vue'
+import CarouselPage from '../views/CarouselPage.vue'
 
 const routes = [
   { path: '/', redirect: '/header' },
@@ -19,7 +20,8 @@ const routes = [
   { path: '/tech-features', name: 'TechFeaturesPage', component: TechFeaturesPage },
   { path: '/purchase', name: 'PurchasePage', component: PurchasePage },
   { path: '/my-account', name: 'MyAccountPage', component: MyAccountPage },
-  { path: '/basket', name: 'BasketPage', component: BasketPage }
+  { path: '/basket', name: 'BasketPage', component: BasketPage },
+  { path: '/carousel', name: 'CarouselPage', component: CarouselPage }
 ]
 
 const router = createRouter({
