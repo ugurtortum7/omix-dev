@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import HomePage from '../views/HomePage.vue'
 import HeaderPage from '../views/HeaderPage.vue'
 import FooterPage from '../views/FooterPage.vue'
 import SignInPage from '../views/SignInPage.vue'
@@ -11,7 +12,7 @@ import BasketPage from '../views/BasketPage.vue'
 import CarouselPage from '../views/CarouselPage.vue'
 
 const routes = [
-  { path: '/', redirect: '/header' },
+  { path: '/', name: 'HomePage', component: HomePage },
   { path: '/header', name: 'HeaderPage', component: HeaderPage },
   { path: '/footer', name: 'FooterPage', component: FooterPage },
   { path: '/sign-in', name: 'SignInPage', component: SignInPage },
