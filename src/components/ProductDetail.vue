@@ -2,7 +2,7 @@
   <div class="product-container">
     <div class="product-content">
       <div class="product-image">
-        <img src="https://www.omix.com.tr/site_files/assets/images/home/o1_neo/1.png" alt="O1 Neo" />
+        <img src="/o1-neo.png" alt="O1 Neo" />
       </div>
       
       <div class="product-info">
@@ -41,7 +41,7 @@
   gap: 60px;
   max-width: 1100px;
   width: 100%;
-  background: #f5f5f5;
+  background: #e1e3e3;
   border-radius: 30px;
   padding: 70px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
