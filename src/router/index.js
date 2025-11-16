@@ -6,6 +6,7 @@ import RegisterPage from '../views/RegisterPage.vue'
 import ProductPage from '../views/ProductPage.vue'
 import TechFeaturesPage from '../views/TechFeaturesPage.vue'
 import PurchasePage from '../views/PurchasePage.vue'
+import MyAccountPage from '../views/MyAccountPage.vue'
 
 const routes = [
   { path: '/', redirect: '/header' },
@@ -15,7 +16,8 @@ const routes = [
   { path: '/register', name: 'RegisterPage', component: RegisterPage },
   { path: '/product', name: 'ProductPage', component: ProductPage },
   { path: '/tech-features', name: 'TechFeaturesPage', component: TechFeaturesPage },
-  { path: '/purchase', name: 'PurchasePage', component: PurchasePage }
+  { path: '/purchase', name: 'PurchasePage', component: PurchasePage },
+  { path: '/my-account', name: 'MyAccountPage', component: MyAccountPage }
 ]
 
 const router = createRouter({
